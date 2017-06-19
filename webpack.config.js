@@ -27,9 +27,17 @@ module.exports = {
                 test:/\.js$/,
                 loader:'babel-loader',
                 exclude: [/node_modules/],
-          query: {
-            presets: ['es2015']
-          }
+                query: {
+                  presets: ['es2015']
+                }
+            },
+            {
+                test: /(\.css$)/, 
+                loaders: ['style-loader', 'css-loader'] 
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+                loader: 'url-loader?limit=100000' 
             }
         ]
     },
